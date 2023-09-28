@@ -65,7 +65,6 @@ class CodeStudioWizardCommandTest extends WizardTestBase {
         // Args.
         [
           '--key' => $this->key,
-          '--phpVersion' => $this->phpVersion,
           '--secret' => $this->secret,
         ],
       ],
@@ -84,7 +83,6 @@ class CodeStudioWizardCommandTest extends WizardTestBase {
         // Args.
         [
           '--key' => $this->key,
-          '--phpVersion' => $this->phpVersion,
           '--secret' => $this->secret,
         ],
       ],
@@ -95,6 +93,8 @@ class CodeStudioWizardCommandTest extends WizardTestBase {
         [
           // 'Would you like to create a new Code Studio project?
           'y',
+          // Select PHP version
+          '0',
           // Do you want to continue?
           'y',
           // Would you like to perform a one time push of code from Acquia Cloud to Code Studio now? (yes/no) [yes]:
@@ -103,7 +103,6 @@ class CodeStudioWizardCommandTest extends WizardTestBase {
         // Args.
         [
           '--key' => $this->key,
-          '--phpVersion' => $this->phpVersion,
           '--secret' => $this->secret,
         ],
       ],
@@ -122,7 +121,6 @@ class CodeStudioWizardCommandTest extends WizardTestBase {
         // Args
         [
           '--key' => $this->key,
-          '--phpVersion' => $this->phpVersion,
           '--secret' => $this->secret,
         ],
       ],
@@ -135,9 +133,10 @@ class CodeStudioWizardCommandTest extends WizardTestBase {
           'y',
           // Enter Cloud Key
           $this->key,
-          // Enter Cloud secret,
+          // Enter Cloud secret
           $this->secret,
-          '--phpVersion' => $this->phpVersion,
+          // Select PHP version
+          '0',
           // Do you want to continue?
           'y',
         ],
@@ -213,7 +212,6 @@ class CodeStudioWizardCommandTest extends WizardTestBase {
     $this->expectExceptionMessage('Unable to authenticate with Code Studio');
     $this->executeCommand([
       '--key' => $this->key,
-      '--phpVersion' => $this->phpVersion,
       '--secret' => $this->secret,
     ]);
   }
@@ -228,7 +226,6 @@ class CodeStudioWizardCommandTest extends WizardTestBase {
     $this->expectExceptionMessage('Could not determine GitLab token');
     $this->executeCommand([
       '--key' => $this->key,
-      '--phpVersion' => $this->phpVersion,
       '--secret' => $this->secret,
     ]);
   }

@@ -634,6 +634,14 @@ abstract class CommandTestBase extends TestBase {
           'value' => '111aae74-e81a-4052-b4b9-a27a62e6b6a6',
           'variable_type' => 'env_var',
         ],
+      2 => [
+        'environment_scope' => '*',
+        'key' => 'PHP_VERSION',
+        'masked' => FALSE,
+        'protected' => FALSE,
+        'value' => '8.2',
+        'variable_type' => 'env_var',
+      ],
     ];
   }
 
